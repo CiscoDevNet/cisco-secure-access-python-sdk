@@ -1,4 +1,4 @@
-# Copyright 2025 Cisco Systems, Inc. and its affiliates
+# Copyright 2026 Cisco Systems, Inc. and its affiliates
 #
 # SPDX-License-Identifier: Apache-2.0
 
@@ -12,18 +12,23 @@ if __import__("typing").TYPE_CHECKING:
     from secure_access.api.as_information_for_a_domain_api import ASInformationForADomainApi
     from secure_access.api.access_rules_api import AccessRulesApi
     from secure_access.api.activity_api import ActivityApi
+    from secure_access.api.alert_rules_api import AlertRulesApi
+    from secure_access.api.alerts_api import AlertsApi
     from secure_access.api.application_categories_api import ApplicationCategoriesApi
     from secure_access.api.application_lists_api import ApplicationListsApi
     from secure_access.api.applications_api import ApplicationsApi
     from secure_access.api.bandwidth_by_hour_api import BandwidthByHourApi
     from secure_access.api.bandwidth_by_timerange_api import BandwidthByTimerangeApi
     from secure_access.api.cisco_secure_malware_analytics_integration_api import CiscoSecureMalwareAnalyticsIntegrationApi
+    from secure_access.api.classifications_api import ClassificationsApi
     from secure_access.api.co_occurrences_for_a_domain_api import CoOccurrencesForADomainApi
     from secure_access.api.connector_groups_api import ConnectorGroupsApi
     from secure_access.api.connectors_api import ConnectorsApi
     from secure_access.api.content_categories_api import ContentCategoriesApi
     from secure_access.api.credentials_api import CredentialsApi
+    from secure_access.api.dlp_rule_events_api import DLPRuleEventsApi
     from secure_access.api.dns_forwarders_api import DNSForwardersApi
+    from secure_access.api.data_identifiers_api import DataIdentifiersApi
     from secure_access.api.deployment_status_api import DeploymentStatusApi
     from secure_access.api.destination_lists_api import DestinationListsApi
     from secure_access.api.destinations_api import DestinationsApi
@@ -44,6 +49,7 @@ if __import__("typing").TYPE_CHECKING:
     from secure_access.api.network_tunnel_groups_peer_state_api import NetworkTunnelGroupsPeerStateApi
     from secure_access.api.network_tunnel_groups_regions_api import NetworkTunnelGroupsRegionsApi
     from secure_access.api.network_tunnel_groups_state_api import NetworkTunnelGroupsStateApi
+    from secure_access.api.network_tunnels_api import NetworkTunnelsApi
     from secure_access.api.networks_api import NetworksApi
     from secure_access.api.organization_information_api import OrganizationInformationApi
     from secure_access.api.organization_requests_by_hour_api import OrganizationRequestsByHourApi
@@ -63,6 +69,7 @@ if __import__("typing").TYPE_CHECKING:
     from secure_access.api.resource_groups_api import ResourceGroupsApi
     from secure_access.api.roaming_computers_api import RoamingComputersApi
     from secure_access.api.rule_settings_and_defaults_api import RuleSettingsAndDefaultsApi
+    from secure_access.api.rules_api import RulesApi
     from secure_access.api.rules_activity_api import RulesActivityApi
     from secure_access.api.s3_bucket_key_rotation_api import S3BucketKeyRotationApi
     from secure_access.api.search_domain_api import SearchDomainApi
@@ -78,6 +85,7 @@ if __import__("typing").TYPE_CHECKING:
     from secure_access.api.summary_api import SummaryApi
     from secure_access.api.tagging_timeline_api import TaggingTimelineApi
     from secure_access.api.tenant_controls_profiles_api import TenantControlsProfilesApi
+    from secure_access.api.tenants_api import TenantsApi
     from secure_access.api.token_api import TokenApi
     from secure_access.api.top_categories_api import TopCategoriesApi
     from secure_access.api.top_dns_query_types_api import TopDNSQueryTypesApi
@@ -95,6 +103,7 @@ if __import__("typing").TYPE_CHECKING:
     from secure_access.api.usage_metrics_api import UsageMetricsApi
     from secure_access.api.utility_api import UtilityApi
     from secure_access.api.vpn_sessions_api import VPNSessionsApi
+    from secure_access.api.virtual_appliances_api import VirtualAppliancesApi
     from secure_access.api.whois_information_for_a_domain_api import WHOISInformationForADomainApi
     
 else:
@@ -110,18 +119,23 @@ from secure_access.api.api_usage_report_api import APIUsageReportApi
 from secure_access.api.as_information_for_a_domain_api import ASInformationForADomainApi
 from secure_access.api.access_rules_api import AccessRulesApi
 from secure_access.api.activity_api import ActivityApi
+from secure_access.api.alert_rules_api import AlertRulesApi
+from secure_access.api.alerts_api import AlertsApi
 from secure_access.api.application_categories_api import ApplicationCategoriesApi
 from secure_access.api.application_lists_api import ApplicationListsApi
 from secure_access.api.applications_api import ApplicationsApi
 from secure_access.api.bandwidth_by_hour_api import BandwidthByHourApi
 from secure_access.api.bandwidth_by_timerange_api import BandwidthByTimerangeApi
 from secure_access.api.cisco_secure_malware_analytics_integration_api import CiscoSecureMalwareAnalyticsIntegrationApi
+from secure_access.api.classifications_api import ClassificationsApi
 from secure_access.api.co_occurrences_for_a_domain_api import CoOccurrencesForADomainApi
 from secure_access.api.connector_groups_api import ConnectorGroupsApi
 from secure_access.api.connectors_api import ConnectorsApi
 from secure_access.api.content_categories_api import ContentCategoriesApi
 from secure_access.api.credentials_api import CredentialsApi
+from secure_access.api.dlp_rule_events_api import DLPRuleEventsApi
 from secure_access.api.dns_forwarders_api import DNSForwardersApi
+from secure_access.api.data_identifiers_api import DataIdentifiersApi
 from secure_access.api.deployment_status_api import DeploymentStatusApi
 from secure_access.api.destination_lists_api import DestinationListsApi
 from secure_access.api.destinations_api import DestinationsApi
@@ -142,6 +156,7 @@ from secure_access.api.network_tunnel_groups_api import NetworkTunnelGroupsApi
 from secure_access.api.network_tunnel_groups_peer_state_api import NetworkTunnelGroupsPeerStateApi
 from secure_access.api.network_tunnel_groups_regions_api import NetworkTunnelGroupsRegionsApi
 from secure_access.api.network_tunnel_groups_state_api import NetworkTunnelGroupsStateApi
+from secure_access.api.network_tunnels_api import NetworkTunnelsApi
 from secure_access.api.networks_api import NetworksApi
 from secure_access.api.organization_information_api import OrganizationInformationApi
 from secure_access.api.organization_requests_by_hour_api import OrganizationRequestsByHourApi
@@ -161,6 +176,7 @@ from secure_access.api.resource_connectors_api import ResourceConnectorsApi
 from secure_access.api.resource_groups_api import ResourceGroupsApi
 from secure_access.api.roaming_computers_api import RoamingComputersApi
 from secure_access.api.rule_settings_and_defaults_api import RuleSettingsAndDefaultsApi
+from secure_access.api.rules_api import RulesApi
 from secure_access.api.rules_activity_api import RulesActivityApi
 from secure_access.api.s3_bucket_key_rotation_api import S3BucketKeyRotationApi
 from secure_access.api.search_domain_api import SearchDomainApi
@@ -176,6 +192,7 @@ from secure_access.api.summaries_by_rule_api import SummariesByRuleApi
 from secure_access.api.summary_api import SummaryApi
 from secure_access.api.tagging_timeline_api import TaggingTimelineApi
 from secure_access.api.tenant_controls_profiles_api import TenantControlsProfilesApi
+from secure_access.api.tenants_api import TenantsApi
 from secure_access.api.token_api import TokenApi
 from secure_access.api.top_categories_api import TopCategoriesApi
 from secure_access.api.top_dns_query_types_api import TopDNSQueryTypesApi
@@ -193,6 +210,7 @@ from secure_access.api.unique_resources_api import UniqueResourcesApi
 from secure_access.api.usage_metrics_api import UsageMetricsApi
 from secure_access.api.utility_api import UtilityApi
 from secure_access.api.vpn_sessions_api import VPNSessionsApi
+from secure_access.api.virtual_appliances_api import VirtualAppliancesApi
 from secure_access.api.whois_information_for_a_domain_api import WHOISInformationForADomainApi
 
 """,
